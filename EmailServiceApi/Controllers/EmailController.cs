@@ -24,7 +24,7 @@ namespace EmailServiceApi.Controllers
         public async Task<ActionResult> SendEmail(EmailModel m)
         {
             
-            await _emailService.SendEmail("ojinnakapascal@gmail.com", "ojinnakapascal@gmail.com", "Email Api Development", "I will like to test my api");
+            await _emailService.SendEmail("ojinnnakapascal@gmail.com", "pascalojinnaka98@gmail.com", "Email Api Development", "I will like to test my api");
 
             return Ok();
         }

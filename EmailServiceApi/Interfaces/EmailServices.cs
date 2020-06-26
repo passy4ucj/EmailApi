@@ -14,9 +14,9 @@ namespace EmailServiceApi.Interfaces
 
 
 
-        public async Task<Response>Send(string apiKey, string to, string cc, string subject, string message)
+        public async Task<Response>Send(string to, string cc, string subject, string message)
         {
-             apiKey = Environment.GetEnvironmentVariable("SendGrid_ApiKey");
+             var apiKey = Environment.GetEnvironmentVariable("SendGrid_ApiKey");
             //string str = "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";
              var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
@@ -39,7 +39,7 @@ namespace EmailServiceApi.Interfaces
         public Task<Response> SendEmail(string to, string cc, string subject, string message)
         {
 
-            return Send(Environment.GetEnvironmentVariable("SendGrid_ApiKey"), to, cc,  subject, message);
+            return Send(to, cc,  subject, message);
         }
     }
 }
