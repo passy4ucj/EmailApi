@@ -17,15 +17,11 @@ namespace EmailServiceApi.Interfaces
         public async Task<Response>Send(string to, string cc, string subject, string message)
         {
              var apiKey = Environment.GetEnvironmentVariable("SendGrid_ApiKey");
-            //string str = "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";
              var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
                 From = new EmailAddress("sijuadebabs@gmail.com", "Benignus Okorie"),
-                Subject = subject,
-              //  PlainTextContent = message,
-               // HtmlContent = message
-                
+                Subject = subject
             };
             msg.AddContent(MimeType.Text, message);
             msg.AddTo(to);
