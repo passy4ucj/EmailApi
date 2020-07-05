@@ -35,7 +35,7 @@ namespace EmailServiceApi.Interfaces
         public Task<Response> SendEmail(string to, string cc, string subject, string message)
         {
 
-            return Send(to, cc,  subject, message);
+            return Send(to, cc, subject, message);
         }
     }
 }

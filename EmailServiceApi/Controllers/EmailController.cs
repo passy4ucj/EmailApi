@@ -21,10 +21,10 @@ namespace EmailServiceApi.Controllers
 
         
         [HttpPost]
-        public async Task<ActionResult> SendEmail(EmailModel m)
+        public async Task<ActionResult> SendEmail([FromBody] EmailModel m)
         {
             
-            await _emailService.SendEmail("ojinnnakapascal@gmail.com", "pascalojinnaka98@gmail.com", "Email Api Development", "I will like to test my api");
+            await _emailService.SendEmail(m.To, m.Cc, m.Subject, m.Message);
 
             return Ok();
         }

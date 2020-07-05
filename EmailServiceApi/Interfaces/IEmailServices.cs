@@ -10,6 +10,7 @@ namespace EmailServiceApi.Interfaces
 {
     public interface IEmailServices
     {
+        
         Task<Response> SendEmail(string to, string cc, string subject, string message);
     }
 
